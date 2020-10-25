@@ -1,0 +1,34 @@
+.navbar {
+    box-shadow: 5px 5px 8px #10252633;
+}
+
+.navbar h6{
+    font-family: 'Marck Script', cursive;
+    font-size: 22px;
+    color: #444444;
+}
+
+.navbar h4{
+    color:#8d2527;
+}
+
+.navbar button.b-1 {
+    background-color: #8d2527e3;
+    transition: .5s;
+}
+
+.navbar button.b-2 {
+    background-color: #E2AD45;
+    transition: .5s;
+}
+
+.navbar button:hover{
+    transform: scale(1.1);
+}
+
+.vl {
+    border-left: 4px solid #444444;
+    height: 30px;
+    text-align: center;
+    align-self: center;
+}
