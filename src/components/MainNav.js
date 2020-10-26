@@ -11,8 +11,8 @@ const MainNav = () => {
         <h6 className="mx-3">Watch anime online for free.</h6>
       </div>
       <div className="d-flex">
-        <button className="btn b-1 rounded mr-3"><i class="fab fa-windows"></i>&nbsp;&nbsp;Genres</button>
-        <button className="btn b-2 rounded mr-3"><i class="far fa-eye"></i>&nbsp;&nbsp;Discover</button>
+        <button className="btn b-1 rounded mr-3"><i className="fab fa-windows"></i>&nbsp;&nbsp;Genres</button>
+        <button className="btn b-2 rounded mr-3"><i className="far fa-eye"></i>&nbsp;&nbsp;Discover</button>
       </div>
     </nav>
   )

@@ -3,10 +3,10 @@ import AnimeCard from './AnimeCard'
 
 const AnimeList = (props) => {
     return (
-        <div>
+        <div className="d-flex flex-wrap justify-content-center align-items-center">
            {
                props.data.map(anime => (
-                   <AnimeCard anime={anime} />
+                   <AnimeCard key={anime.mal_id} anime={anime} />
                ))
            }
         </div>
