@@ -1,5 +1,6 @@
 import React from 'react'
 import {SearchContext} from '../context/search'
+import './AnimeCard.css'
 
 const AnimeCard = (props) => {
     const title = props.anime.title
@@ -7,11 +8,15 @@ const AnimeCard = (props) => {
     const synopsis = props.anime.synopsis
 
     return (
-        <div className="card" style={{width: "12rem", maxHeight: 360, minHeight: 360, border: "1px solid #fff", boxShadow: "5px 5px 6px #10252633"}} className="m-2 rounded">
+        <div className="card m-2 rounded">
             <img src={imageUrl} className="card-img-top" alt={title} 
             style={{maxHeight: 260, minHeight:260, overflow: "hidden"}}
             />
-            <h5 className="title" style={{fontSize: 14}} className="p-2">{title}</h5>
+            <h5 className="title p-2" style={{fontSize: 14}}>{title}</h5>
+            <div className="card-hover p-2 rounded">
+                <h5>Overview : </h5>
+                <p style={{fontSize: 13}}>{synopsis}</p>
+            </div>
         </div>
     )
 }

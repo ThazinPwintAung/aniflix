@@ -20,7 +20,7 @@ const Results = () => {
     }, [search]);
 
     return (
-        <div className="m-4">
+        <div className="m-4 px-4">
             {(dataExists && <AnimeList data={search.animeData}/>) || 'Data doesnt exists'} 
         </div>
     )
