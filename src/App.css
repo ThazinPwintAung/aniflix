@@ -1,2 +1,98 @@
+.animate-popup {
+    -webkit-animation: popup 200ms ease-out forwards;
+    animation: popup 200ms ease-out forwards;
+}
 
+.animate-popup-1 {
+    -webkit-animation: popup 300ms ease-out forwards;
+    animation: popup 300ms ease-out forwards;
+}
   
+.animate-popup-2 {
+    opacity: 0;
+    -webkit-animation: popup 400ms 100ms ease-out forwards;
+    animation: popup 400ms 100ms ease-out forwards;
+}
+  
+.animate-popup-3 {
+    opacity: 0;
+    -webkit-animation: popup 500ms 300ms ease-out forwards;
+    animation: popup 500ms 300ms ease-out forwards;
+}
+
+@keyframes popup {
+    0% {
+        opacity: 0;
+        transform: translateY(15vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-popdown {
+    -webkit-animation: popdown 200ms ease-in forwards; 
+    animation: popdown 200ms ease-in forwards;
+}
+
+@keyframes popdown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10vh);
+    }
+}
+
+.animate-fadein {
+    -webkit-animation: fadein 250ms ease-out;
+    animation: fadein 250ms ease-out;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-shrinkup {
+    animation: shrinkup 120ms ease-out forwards;
+}
+
+@keyframes shrinkup {
+    0% {
+        transform: scale(1.2, 5)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
+.animate-enlarge {
+    -webkit-animation: enlarge 800ms cubic-bezier(0.175, 0.885, 0.32, 1.15);
+    animation: enlarge 800ms cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+  
+@keyframes enlarge {
+    0%{
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+    }
+}
+
+
+
+
+

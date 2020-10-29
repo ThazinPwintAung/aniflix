@@ -21,7 +21,7 @@ const AnimeCard = (props) => {
     }
 
     return (
-        <div className="card m-2 rounded" onClick={onClickHandler}>
+        <div className="card m-2 rounded animate-enlarge" onClick={onClickHandler}>
             <img src={imageUrl} className="card-img-top" alt={title} 
             style={{maxHeight: 260, minHeight:260, overflow: "hidden"}}
             />
