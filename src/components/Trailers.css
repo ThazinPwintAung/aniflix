@@ -1,0 +1,42 @@
+.trailers {
+    margin-top: 2vh;
+}
+
+.trailers h3 {
+    font-size: 20px;
+}
+
+.trailer-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.trailer-wrapper .trailer-col {
+    width: 350px;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.trailer-container {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.trailer-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: "";
+}
+
+.trailer-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 30px 10px;
+}

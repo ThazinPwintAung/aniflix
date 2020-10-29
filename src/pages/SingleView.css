@@ -1,0 +1,45 @@
+.animeDetailsPage {
+    text-align: left;
+}
+
+.animeDetailsPage .details-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.animeDetailsPage .details-wrapper .detail-poster img{
+    margin: 40px 4vw 20px 4vw;
+    max-width: 26vmin;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 5px 5px 6px #10252633;
+}
+
+.animeDetailsPage .details-wrapper .detail-title {
+    flex-grow: 1;
+    padding-top: 30px;
+    padding-right: 4vw;
+}
+
+.animeDetailsPage .details-wrapper .detail-title .title {
+    font-size: 22px;
+}
+
+.animeDetailsPage .details-wrapper .detail-title small {
+    font-weight: 600;
+}
+
+.animeDetailsPage .details-wrapper .detail-title > div > * {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+.overview {
+    margin-top: 30px;
+}
+
+.overview h3 {
+    font-size: 20px;
+}

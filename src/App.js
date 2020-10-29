@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import Home from './pages/Home'
 import Results from './pages/Results'
-import SingleView from './pages/Home'
+import SingleView from './pages/SingleView'
 import {SearchContext} from './context/search'
 import MainNav from './components/MainNav';
 
