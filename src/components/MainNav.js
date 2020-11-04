@@ -1,5 +1,6 @@
 
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './MainNav.css'
 
 const MainNav = () => {
@@ -12,7 +13,7 @@ const MainNav = () => {
       </div>
       <div className="d-flex">
         <button className="btn b-1 rounded mr-3"><i className="fab fa-windows"></i>&nbsp;&nbsp;Genres</button>
-        <button className="btn b-2 rounded mr-3"><i className="far fa-eye"></i>&nbsp;&nbsp;Discover</button>
+        <Link to="/discover"><button className="btn b-2 rounded mr-3"><i className="far fa-eye"></i>&nbsp;&nbsp;Discover</button></Link>
       </div>
     </nav>
   )

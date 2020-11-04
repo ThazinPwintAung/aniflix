@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import { SearchContext } from '../context/search'
-import './SearchBar.css'
+import './Home.css'
 
 const Home = () => {
     const history = useHistory();
@@ -12,7 +12,6 @@ const Home = () => {
         event.preventDefault()
         search.search(input).then(data => {
             search.setData(data.results);
-            localStorage.setItem('myData', JSON.stringify(data.results));
             history.push('/results');
         })
     }

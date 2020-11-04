@@ -9,7 +9,6 @@ const Results = () => {
     useEffect(() => {
         if (search.animeData === undefined){
             try {
-                search.setData(JSON.parse(localStorage.getItem('myData')));
                 setDataExists(true)
             }catch (error) {
                 console.log(error)
@@ -21,7 +20,7 @@ const Results = () => {
 
     return (
         <div className="m-4 px-4">
-            {(dataExists && <AnimeList data={search.animeData}/>) || 'Data doesnt exists'} 
+            {(dataExists && <AnimeList data={search.animeData}/>) || "Data doesn't exists"} 
         </div>
     )
 }

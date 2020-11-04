@@ -6,6 +6,7 @@ import Results from './pages/Results'
 import SingleView from './pages/SingleView'
 import {SearchContext} from './context/search'
 import MainNav from './components/MainNav';
+import Discover from './pages/Discover';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
 
   const search = (searchTerm) => {
     return fetch(
-      `https://api.jikan.moe/v3/search/anime?q=${searchTerm}&limit=20`
+      `https://api.jikan.moe/v3/search/anime?q=${searchTerm}`
     ).then(response => response.json())
   }
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/" exact><Home/></Route>
           <Route path="/results" exact><Results/></Route>
           <Route path="/single-view" exact><SingleView/></Route>
+          <Route path="/discover" exact><Discover/></Route>
           <Redirect to="/" />
         </Switch>
       </Router>

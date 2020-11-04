@@ -6,7 +6,7 @@ import './SingleView.css'
 
 const SingleView = () => {
     const search = useContext(SearchContext)
-    const {title, title_english, title_japanese, url, aired, episodes, genres, image_url, rating, synopsis, duration, trailer_url} = search.singleData
+    const {title, title_english, title_japanese, aired, episodes, genres, image_url, rating, synopsis, duration, trailer_url} = search.singleData
 
     console.log(search.singleData);
 
@@ -27,11 +27,14 @@ const SingleView = () => {
                             { episodes ? <div> Episodes : {episodes} </div> : null }
                             { duration ? <div> Duration : {duration} </div> : null}
                             { genres ? <Genres></Genres> : null}
-                            <div className="overview">
-                                <h3>Synopsis</h3>
-                                <hr></hr>
-                                <p>{synopsis}</p>
-                            </div>
+                            {
+                                synopsis ? 
+                                <div className="overview">
+                                    <h3>Synopsis</h3>
+                                    <hr></hr>
+                                    <p>{synopsis}</p>
+                                </div> : null
+                            }
                         </div>
                     </div>
                 </div>

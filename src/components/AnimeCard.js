@@ -25,11 +25,14 @@ const AnimeCard = (props) => {
             <img src={imageUrl} className="card-img-top" alt={title} 
             style={{maxHeight: 260, minHeight:260, overflow: "hidden"}}
             />
-            <h5 className="title p-2" style={{fontSize: 14}}>{title}</h5>
-            <div className="card-hover p-2 rounded">
-                <h5>Overview : </h5>
-                <p style={{fontSize: 13}}>{synopsis}</p>
-            </div>
+            <h5 className="title p-2" style={{fontSize: 14, textAlign: "left"}}>{title}</h5>
+            {
+                synopsis &&
+                <div className="card-hover p-2 rounded">
+                    <h5>Overview : </h5>
+                    <p style={{fontSize: 13}}>{synopsis}</p>
+                </div>
+            }
         </div>
     )
 }

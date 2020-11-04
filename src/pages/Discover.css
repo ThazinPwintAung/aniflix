@@ -1,0 +1,21 @@
+.category {
+    margin: 40px 4vw 20px 4vw;
+    text-align: center;
+}
+
+.category .result-wrapper {
+    max-height: 370px;
+    overflow-y: hidden;
+}
+
+.discover-title {
+    margin: 9vmin;
+}
+
+.discover-title h2 {
+    font-size: 22px;
+}
+
+.discover-title .seeMore {
+   justify-self: flex-end;
+}
