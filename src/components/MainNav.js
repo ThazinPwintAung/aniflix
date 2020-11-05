@@ -11,8 +11,7 @@ const MainNav = () => {
         <div className="vl m-1"></div>
         <h6 className="mx-3">Watch anime online for free.</h6>
       </div>
-      <div className="d-flex">
-        <button className="btn b-1 rounded mr-3"><i className="fab fa-windows"></i>&nbsp;&nbsp;Genres</button>
+      <div>
         <Link to="/discover"><button className="btn b-2 rounded mr-3"><i className="far fa-eye"></i>&nbsp;&nbsp;Discover</button></Link>
       </div>
     </nav>

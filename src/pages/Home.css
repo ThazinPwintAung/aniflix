@@ -55,3 +55,27 @@
     height: 100%;
 }
 
+.genres-wrapper {
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.genre-block {
+    display: inline-block;
+    background-color:  rgba(0, 0, 0, 0.055);
+    color: black;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 3px 8px;
+    margin: 8px 8px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.genre-block:hover {
+    background-color: #993C3E;
+}
+

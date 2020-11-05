@@ -1,3 +1,4 @@
+import Axios from 'axios'
 import React, {useContext, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import MainNav from '../components/MainNav'
@@ -56,9 +57,18 @@ const Home = () => {
     ]
 
     const handleSearch = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         search.search(input).then(data => {
             search.setData(data.results);
+            history.push('/results');
+        })
+    }
+
+    const searchByGenre = (genre) => {
+        Axios.get(`https://api.jikan.moe/v3/search/anime?genre=${genre.id}`)
+        .then(res => {
+            console.log(res.data.results);
+            search.setData(res.data.results);
             history.push('/results');
         })
     }
@@ -76,6 +86,11 @@ const Home = () => {
                     <input type="text" placeholder="Search for your favourite anime..." value={input} onChange={(event) => setInput(event.target.value)} />
                     <button type="submit" onClick={handleSearch}><i className="fas fa-search"></i></button>
                 </form>
+            </div>
+            <div className="genres-wrapper">
+                {
+                    genres.map(g => <div className="genre-block" key={g.id} onClick={searchByGenre}>{g.name}</div>)
+                }
             </div>
         </div>
     )

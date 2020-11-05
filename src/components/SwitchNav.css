@@ -6,7 +6,30 @@
     color:#8d2527;
 }
 
-.btn {
+.return {
     background-color:  rgba(0, 0, 0, 0.055);
     transition: .5s;
 }
+
+.navbar .return:hover{
+    transform: scale(0.9);
+}
+
+.navbar form input[type="text"] {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    width: 100%;
+    padding: 5px 0 5px 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #E2AD45;
+    transition: .5s;
+}
+
+.navbar form input[type="text"]:focus {
+    transform: scale(0.9);
+}
+
