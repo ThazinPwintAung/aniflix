@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react'
 import AnimeList from '../components/AnimeList';
+import SwitchNav from '../components/SwitchNav';
 import {SearchContext} from '../context/search'
 
 const Results = () => {
@@ -19,8 +20,11 @@ const Results = () => {
     }, [search]);
 
     return (
-        <div className="m-4 px-4">
-            {(dataExists && <AnimeList data={search.animeData}/>) || "Data doesn't exists"} 
+        <div>
+            <SwitchNav />
+            <div className="m-4 px-4">
+                {(dataExists && <AnimeList data={search.animeData}/>) || "Data doesn't exists"} 
+            </div>
         </div>
     )
 }

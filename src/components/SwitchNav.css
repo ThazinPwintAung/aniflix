@@ -1,0 +1,12 @@
+.navbar {
+    box-shadow: 5px 5px 8px #10252633;
+}
+
+.navbar h4{
+    color:#8d2527;
+}
+
+.btn {
+    background-color:  rgba(0, 0, 0, 0.055);
+    transition: .5s;
+}

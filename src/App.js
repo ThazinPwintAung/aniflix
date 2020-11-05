@@ -5,7 +5,6 @@ import Home from './pages/Home'
 import Results from './pages/Results'
 import SingleView from './pages/SingleView'
 import {SearchContext} from './context/search'
-import MainNav from './components/MainNav';
 import Discover from './pages/Discover';
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
   return (
     <SearchContext.Provider value={{search, animeData, setData, singleData, setSingle}}>
       <Router>
-      <MainNav />
         <Switch>
           <Route path="/" exact><Home/></Route>
           <Route path="/results" exact><Results/></Route>

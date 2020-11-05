@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Axios from 'axios'
 import AnimeCard from '../components/AnimeCard'
 import './Discover.css'
+import SwitchNav from '../components/SwitchNav'
 
 const Discover = () => {
     const [topList, setTopList] = useState([])
@@ -46,9 +47,10 @@ const Discover = () => {
 
     return (
         <div className="discover">
+        <SwitchNav />
             <div className="category mb-3">
                <div className="discover-title d-flex my-2 align-items-center">
-                    <i className="fas fa-chart-line pr-2"></i>
+                    <i className="fas fa-chart-line fa-2x pr-2"></i>
                     <h2>What's HOT!</h2>
                </div>
                <div className="result-wrapper d-flex flex-wrap justify-content-center align-items-center animate-popup">
@@ -60,7 +62,7 @@ const Discover = () => {
             </div>
             <div className="category mb-3">
                 <div className="discover-title d-flex p-2 my-2 align-items-center">
-                    <i className="far fa-calendar-alt pr-2"></i>
+                    <i className="far fa-calendar-alt fa-2x pr-2"></i>
                     <h2>What's airing today!</h2>
                 </div>
                 <div className="result-wrapper d-flex flex-wrap justify-content-center align-items-center animate-popup">
@@ -72,7 +74,7 @@ const Discover = () => {
             </div>
             <div className="category mb-3">
                 <div className="discover-title d-flex p-2 my-2 align-items-center">
-                    <i className="far fa-clock pr-2"></i>
+                    <i className="far fa-clock fa-2x pr-2"></i>
                     <h2>Coming Soon!</h2>
                 </div>
                 <div className="result-wrapper d-flex flex-wrap justify-content-center align-items-center animate-popup">
