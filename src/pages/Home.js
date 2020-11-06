@@ -1,5 +1,4 @@
-import Axios from 'axios'
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import MainNav from '../components/MainNav'
 import { SearchContext } from '../context/search'
@@ -9,6 +8,7 @@ const Home = () => {
     const history = useHistory();
     const search = useContext(SearchContext)
     const [input, setInput] = useState('')
+    const [genreId, setGenreId] = useState('')
 
     const genres = [
         { id: 1, name: 'Action'},
@@ -56,6 +56,10 @@ const Home = () => {
         { id: 43, name: 'Josei'},
     ]
 
+    useEffect(() => {
+        console.log(genreId);
+    })
+
     const handleSearch = (event) => {
         event.preventDefault();
         search.search(input).then(data => {
@@ -64,13 +68,16 @@ const Home = () => {
         })
     }
 
-    const searchByGenre = (genre) => {
-        Axios.get(`https://api.jikan.moe/v3/search/anime?genre=${genre.id}`)
-        .then(res => {
-            console.log(res.data.results);
-            search.setData(res.data.results);
-            history.push('/results');
-        })
+    const genreIdSet = (gid) => {
+        setGenreId(gid);
+        searchByGenre(gid);
+    }
+
+    const searchByGenre = (genreId) => {
+       search.searchByGenre(genreId).then(data => {
+           search.setData(data.results);
+           history.push('/results');
+       })
     }
 
     return (
@@ -89,7 +96,7 @@ const Home = () => {
             </div>
             <div className="genres-wrapper">
                 {
-                    genres.map(g => <div className="genre-block" key={g.id} onClick={searchByGenre}>{g.name}</div>)
+                    genres.map(g => <div className="genre-block" key={g.id} onClick={() => genreIdSet(g.id)}>{g.name}</div>)
                 }
             </div>
         </div>

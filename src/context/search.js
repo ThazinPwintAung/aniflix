@@ -4,6 +4,7 @@ export const SearchContext = createContext({
     animeData: [],
     singleData: {},
     search: () => {},
+    searchByGenre: () => {},
     setData: () => {},
     setSingle: () => {},
 });

@@ -26,8 +26,14 @@ function App() {
     ).then(response => response.json())
   }
 
+  const searchByGenre = (genreId) => {
+    return fetch(
+      `https://api.jikan.moe/v3/search/anime?genre=${genreId}`
+    ).then(response => response.json())
+  }
+
   return (
-    <SearchContext.Provider value={{search, animeData, setData, singleData, setSingle}}>
+    <SearchContext.Provider value={{search, searchByGenre, animeData, setData, singleData, setSingle}}>
       <Router>
         <Switch>
           <Route path="/" exact><Home/></Route>
