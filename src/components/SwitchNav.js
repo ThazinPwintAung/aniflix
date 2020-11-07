@@ -11,10 +11,8 @@ const SwitchNav = () => {
 
     const handleSearch = (event) => {
         event.preventDefault()
-        search.search(input).then(data => {
-            search.setData(data.results);
-            history.push('/results');
-        })
+        search.search(input);
+        history.push('/results');
     }
     return (
         <nav className="navbar d-flex justify-content-between align-items-center px-4 pt-2" >

@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import Genres from '../components/Genres'
+import Loading from '../components/Loading'
 import SwitchNav from '../components/SwitchNav'
 import Trailers from '../components/Trailers'
 import {SearchContext} from '../context/search'
@@ -14,7 +15,7 @@ const SingleView = () => {
     return (
         <div>
             <SwitchNav />
-            <div className="animeDetailsPage mx-4 px-5 animate-popup">
+                <div className="animeDetailsPage mx-4 px-5 animate-popup">
                 <div className="details-wrapper">
                     <div className="detail-poster">
                         <img className="animate-fadein" src={image_url} alt={title_english}/>

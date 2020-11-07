@@ -57,18 +57,14 @@ const Home = () => {
 
     const handleSearch = (event) => {
         event.preventDefault();
-        search.search(input).then(data => {
-            search.setData(data.results);
-            history.push('/results');
-        })
+        search.search(input);
+        history.push('/results');
     }
 
     const searchByGenre = (genreId) => {
         console.log(genreId);
-        search.searchByGenre(genreId).then(data => {
-           search.setData(data.results);
-           history.push('/results');
-        })
+        search.searchByGenre(genreId);
+        history.push('/results');
     }
 
     return (

@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext} from 'react'
 import {useHistory} from 'react-router-dom'
 import {SearchContext} from '../context/search'
+import Axios from 'axios'
 import './AnimeCard.css'
 
 const AnimeCard = (props) => {
@@ -11,17 +12,16 @@ const AnimeCard = (props) => {
     const history = useHistory()
     const search = useContext(SearchContext)
     
-    const onClickHandler = () => {
-        fetch(`https://api.jikan.moe/v3/anime/${props.anime.mal_id}`)
-        .then(res => res.json())
-        .then(data => {
-            search.setSingle(data);
+    const openCard = () => {
+        Axios.get(`https://api.jikan.moe/v3/anime/${props.anime.mal_id}`)
+        .then(response => {
+            search.setSingle(response.data);
             history.push('/single-view');
         })
     }
 
     return (
-        <div className="card m-2 rounded animate-enlarge" onClick={onClickHandler}>
+        <div className="card m-2 rounded animate-enlarge" onClick={openCard}>
             <img src={imageUrl} className="card-img-top" alt={title} 
             style={{maxHeight: 260, minHeight:260, overflow: "hidden"}}
             />

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
+import Axios from 'axios'
 import Home from './pages/Home'
 import Results from './pages/Results'
 import SingleView from './pages/SingleView'
@@ -11,6 +12,7 @@ function App() {
 
   const [animeData, setAnimeData] = useState([])
   const [singleData, setSingleData] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
 
   const setData = (data) => {
     setAnimeData(data)
@@ -21,15 +23,21 @@ function App() {
   }
 
   const search = (searchTerm) => {
-    return fetch(
-      `https://api.jikan.moe/v3/search/anime?q=${searchTerm}`
-    ).then(response => response.json())
+    setIsLoading(true)
+    Axios.get(`https://api.jikan.moe/v3/search/anime?q=${searchTerm}`)
+    .then(response => {
+      setData(response.data.results);
+      setIsLoading(false);
+    })
   }
 
   const searchByGenre = (genreId) => {
-    return fetch(
-      `https://api.jikan.moe/v3/search/anime?genre=${genreId}`
-    ).then(response => response.json())
+    setIsLoading(true);
+    Axios.get(`https://api.jikan.moe/v3/search/anime?genre=${genreId}`)
+    .then(response => {
+      setData(response.data.results);
+      setIsLoading(false);
+    })
   }
 
   return (
@@ -37,8 +45,8 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact><Home/></Route>
-          <Route path="/results" exact><Results/></Route>
-          <Route path="/single-view" exact><SingleView/></Route>
+          <Route path="/results" exact><Results isLoading={isLoading}/></Route>
+          <Route path="/single-view" exact><SingleView /></Route>
           <Route path="/discover" exact><Discover/></Route>
           <Redirect to="/" />
         </Switch>
