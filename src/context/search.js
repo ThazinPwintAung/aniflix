@@ -7,4 +7,5 @@ export const SearchContext = createContext({
     searchByGenre: () => {},
     setData: () => {},
     setSingle: () => {},
+    isLoading: false,
 });

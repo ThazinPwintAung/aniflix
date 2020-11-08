@@ -1,31 +1,52 @@
-import React, {useEffect, useState, useContext} from 'react'
+import Axios from 'axios';
+import React, {useEffect, useState} from 'react'
 import AnimeList from '../components/AnimeList';
 import Loading from '../components/Loading';
 import SwitchNav from '../components/SwitchNav';
-import {SearchContext} from '../context/search'
 
-const Results = ({isLoading}) => {
-    const search = useContext(SearchContext);
-    const [dataExists, setDataExists] = useState(true)
+const Results = ({match}) => {
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [data, setData] = useState([]);
+
+    const searchByTerms = (searchTerm) => {
+        setIsLoading(true)
+        Axios.get(`https://api.jikan.moe/v3/search/anime?q=${searchTerm}`)
+        .then(response => {
+          setData(response.data.results);
+          setIsLoading(false);
+        }).catch(err => {
+          setData([]);
+          setIsLoading(false);
+        });
+      }
     
+    const searchByGenre = (genreId) => {
+        setIsLoading(true);
+        Axios.get(`https://api.jikan.moe/v3/search/anime?genre=${genreId}`)
+        .then(response => {
+          setData(response.data.results);
+          setIsLoading(false);
+        }).catch(err => {
+          setData([]);
+          setIsLoading(false);
+        });
+      }
+
     useEffect(() => {
-        if (search.animeData === undefined){
-            try {
-                setDataExists(true)
-            }catch (error) {
-                console.log(error)
-                setDataExists(false)
-            }
+        if(match.params.type === "genre") {
+            searchByGenre(match.params.searchTermOrGenreId);
+        } else {
+            searchByTerms(match.params.searchTermOrGenreId);
         }
-        console.log(search.animeData)
-    }, [search]);
+    }, [match.params.type, match.params.searchTermOrGenreId]);
 
     return (
         <div>
             <SwitchNav />
             { isLoading ? <Loading/> :
                 <div className="m-4 px-4">
-                    {(dataExists && <AnimeList data={search.animeData}/>) || "Data doesn't exists"} 
+                    {data && data.length > 0 ? <AnimeList data={data}/>: "Data doesn't exists"} 
                 </div>
             }
         </div>

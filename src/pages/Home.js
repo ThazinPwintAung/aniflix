@@ -1,12 +1,10 @@
-import React, {useContext, useState} from 'react'
+import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import MainNav from '../components/MainNav'
-import { SearchContext } from '../context/search'
 import './Home.css'
 
 const Home = () => {
     const history = useHistory();
-    const search = useContext(SearchContext)
     const [input, setInput] = useState('')
 
     const genres = [
@@ -57,14 +55,11 @@ const Home = () => {
 
     const handleSearch = (event) => {
         event.preventDefault();
-        search.search(input);
-        history.push('/results');
+        history.push('/results/searchByTerms/' + input);
     }
 
     const searchByGenre = (genreId) => {
-        console.log(genreId);
-        search.searchByGenre(genreId);
-        history.push('/results');
+        history.push('/results/genre/' + genreId);
     }
 
     return (

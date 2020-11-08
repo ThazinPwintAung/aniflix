@@ -1,17 +1,14 @@
-import React, { useContext, useState } from 'react'
-import { SearchContext } from '../context/search'
+import React, { useState } from 'react'
 import {useHistory} from 'react-router-dom'
 import './SwitchNav.css'
 
 const SwitchNav = () => {
     const [input, setInput] = useState('')
-    const search = useContext(SearchContext)
     const history = useHistory()
 
     const handleSearch = (event) => {
-        event.preventDefault()
-        search.search(input);
-        history.push('/results');
+        event.preventDefault();
+        history.push('/results/searchByTerms/' + input);
     }
 
     const goHome = () => {
