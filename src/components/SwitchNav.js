@@ -13,10 +13,16 @@ const SwitchNav = () => {
         search.search(input);
         history.push('/results');
     }
+
+    const goHome = () => {
+        console.log("I want to go home");
+        history.push('/');
+    }
+
     return (
         <nav className="navbar d-flex justify-content-between align-items-center px-4 pt-2" >
             <div className="d-flex align-items-center">
-                <h4 className="mx-3">ANIFLIX</h4>
+                <h4 className="mx-3" onClick={goHome}>ANIFLIX</h4>
                 <form onSubmit={handleSearch} className="d-flex align-items-center">
                     <input type="text" placeholder="Search" value={input} onChange={(event) => setInput(event.target.value)}/>
                 </form>
