@@ -12,6 +12,18 @@
     margin: 9vmin;
 }
 
+.category h6 {
+    color: gray;
+    font-size: 18px;
+    margin-right: 9vmin;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.category h6:hover {
+    color: #444444;
+}
+
 .discover-title h2 {
     font-size: 22px;
 }

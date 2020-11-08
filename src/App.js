@@ -12,7 +12,7 @@ function App() {
 
   const [animeData, setAnimeData] = useState([])
   const [singleData, setSingleData] = useState({})
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
 
   const setData = (data) => {
     setAnimeData(data)

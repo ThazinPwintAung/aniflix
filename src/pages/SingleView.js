@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
 import Genres from '../components/Genres'
-import Loading from '../components/Loading'
 import SwitchNav from '../components/SwitchNav'
 import Trailers from '../components/Trailers'
 import {SearchContext} from '../context/search'

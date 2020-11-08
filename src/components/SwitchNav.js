@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import {Link} from 'react-router-dom'
 import { SearchContext } from '../context/search'
 import {useHistory} from 'react-router-dom'
 import './SwitchNav.css'
@@ -23,7 +22,7 @@ const SwitchNav = () => {
                 </form>
             </div>
             <div>
-                <Link to="/"><button className="btn return rounded mr-3"><i className="fas fa-arrow-left"></i>&nbsp;&nbsp;Return</button></Link>
+                <button className="btn return rounded mr-3" onClick={() => history.goBack()}><i className="fas fa-arrow-left"></i>&nbsp;&nbsp;Return</button>
             </div>
       </nav>
     )
